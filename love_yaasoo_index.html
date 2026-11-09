@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#170d25">
+<title>LOVE YAASO 💗</title>
+<style>
+:root{--pink:#ff75ad;--rose:#ffb6d2;--purple:#b99aff;--ink:#170d25}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;color:#fff;font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;background:radial-gradient(ellipse at 18% 15%,#46234f 0,transparent 38%),radial-gradient(ellipse at 85% 75%,#34205b 0,transparent 40%),linear-gradient(145deg,#100b1b,#21112d 55%,#120d20);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.25;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(to bottom,#000,transparent)}
+.wrap{width:min(100% - 32px,560px);margin:auto;min-height:100svh;display:grid;place-items:center;padding:34px 0;position:relative;z-index:1}
+.panel{width:100%;text-align:center;padding:30px 22px;border:1px solid #ffffff20;border-radius:28px;background:linear-gradient(145deg,#ffffff12,#ffffff07);box-shadow:0 24px 80px #0007;backdrop-filter:blur(14px)}
+.eyebrow{color:var(--rose);letter-spacing:4px;font-size:11px;font-weight:800}
+h1{font-size:clamp(36px,11vw,60px);line-height:1.08;margin:15px 0 10px;background:linear-gradient(100deg,#fff,#ffacd0 48%,#c5a9ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:#eaddec;line-height:1.9;margin:12px auto 22px;max-width:390px}
+.heart{font-size:42px;display:inline-block;filter:drop-shadow(0 0 18px #ff6fae);animation:pulse 1.7s infinite}
+@keyframes pulse{50%{transform:scale(1.16)}}
+input{width:100%;padding:16px 18px;border-radius:15px;border:1px solid #ffffff35;background:#100a1dcc;color:#fff;font:inherit;text-align:center;font-size:18px;outline:none;direction:ltr}
+input:focus{border-color:var(--pink);box-shadow:0 0 0 3px #ff75ad22}
+button{border:0;border-radius:15px;padding:15px 22px;width:100%;margin-top:13px;background:linear-gradient(100deg,#ff6fae,#b58aff);color:#24122c;font:800 16px system-ui;cursor:pointer;box-shadow:0 10px 28px #db67aa38;transition:transform .2s}
+button:active{transform:scale(.98)}
+.error{min-height:25px;color:#ffb6d2;font-size:13px;margin-top:8px}
+.tiny{font-size:12px;color:#cdbbd2;margin-top:16px}
+.hidden{display:none!important}
+.message{font-size:clamp(17px,4.5vw,21px);line-height:2.15;color:#fff0f7;margin:18px auto;max-width:440px}
+.divider{width:70px;height:2px;border-radius:9px;background:linear-gradient(90deg,transparent,var(--pink),transparent);margin:20px auto}
+.memory{border:1px dashed #ffffff55;border-radius:18px;padding:20px;margin-top:22px;background:#ffffff08}
+.memory strong{color:#ffc2dc}
+.photoGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:15px}
+.photoGrid img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;border:1px solid #ffffff35}
+.photoGrid:empty{display:none}
+.upload{font-size:13px;background:#ffffff12;color:#fff;border:1px solid #ffffff35;box-shadow:none}
+footer{font-size:11px;color:#bdaac6;margin-top:24px}
+.float{position:fixed;bottom:-30px;z-index:0;pointer-events:none;opacity:0;animation:rise 8s linear infinite}
+@keyframes rise{0%{transform:translateY(0) rotate(0);opacity:0}12%{opacity:.7}85%{opacity:.5}100%{transform:translateY(-110vh) rotate(35deg);opacity:0}}
+@media(min-width:600px){.panel{padding:42px 38px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <main class="panel" id="lock">
+    <div class="eyebrow">A LITTLE SURPRISE FOR YOU</div>
+    <div class="heart">♡</div>
+    <h1>LOVE YAASO</h1>
+    <p class="sub">في مفاجأة صغيرة مستنياكي هنا...<br>جاهزة تفتحيها؟ ✨</p>
+    <input id="password" type="password" placeholder="اكتبي كلمة السر" autocomplete="off" aria-label="كلمة السر">
+    <button id="unlock">افتحي مفاجأتك 💗</button>
+    <div class="error" id="error" role="status"></div>
+    <div class="tiny">مخصوصة ليكي وبس ♡</div>
+  </main>
+
+  <main class="panel hidden" id="surprise">
+    <div class="eyebrow">YOU ARE MY FAVORITE PERSON</div>
+    <div class="heart">💗</div>
+    <h1>يا ياسو</h1>
+    <div class="divider"></div>
+    <p class="message">أهلًا يا ياسو، دي مفاجأة صغيرة معمولالك بكل حب، وكل تفصيلة فيها ليكي إنتِ. أتمنى كل ما تشوفيها تفتكري إنك شخص غالي ومميز جدًا. ❤️</p>
+    <p class="message">وجودك بيخلّي للحظات العادية معنى أجمل، ويا رب دايمًا أيامك تكون مليانة فرحة وراحة وابتسامة. ✨</p>
+    <div class="memory">
+      <strong>مساحتنا للذكريات 📸</strong>
+      <p class="tiny">اختاري صور من جهازك عشان تظهر هنا على نفس الصفحة.</p>
+      <input class="hidden" type="file" id="photos" accept="image/*" multiple>
+      <button class="upload" id="choose">ضيفي صور وذكرياتنا</button>
+      <div class="photoGrid" id="gallery"></div>
+    </div>
+    <div class="divider"></div>
+    <h2 style="color:#ffc0dc;margin-bottom:5px">I LOVE YOU YAASO</h2>
+    <div class="heart">♥</div>
+    <footer>صُنعت بحب خصيصًا ليكي · LOVE YAASO</footer>
+  </main>
+</div>
+<script>
+const PASS = "16/7/2026";
+const lock = document.getElementById("lock");
+const surprise = document.getElementById("surprise");
+const field = document.getElementById("password");
+const error = document.getElementById("error");
+function openSurprise(){
+  if(field.value.trim() === PASS){
+    lock.classList.add("hidden");
+    surprise.classList.remove("hidden");
+    window.scrollTo({top:0,behavior:"smooth"});
+  } else {
+    error.textContent = "الكلمة مش مظبوطة، جرّبي تاني 💗";
+    field.value = "";
+    field.focus();
+  }
+}
+document.getElementById("unlock").addEventListener("click",openSurprise);
+field.addEventListener("keydown",e=>{if(e.key==="Enter")openSurprise()});
+document.getElementById("choose").addEventListener("click",()=>document.getElementById("photos").click());
+document.getElementById("photos").addEventListener("change",e=>{
+  const gallery=document.getElementById("gallery");
+  gallery.innerHTML="";
+  [...e.target.files].slice(0,8).forEach(file=>{
+    const img=document.createElement("img");
+    img.alt="ذكرى جميلة";
+    img.src=URL.createObjectURL(file);
+    gallery.appendChild(img);
+  });
+});
+for(let i=0;i<14;i++){
+  const h=document.createElement("div");
+  h.className="float";
+  h.textContent=["♡","♥","✦","💗"][i%4];
+  h.style.left=(Math.random()*100)+"%";
+  h.style.animationDelay=(Math.random()*8)+"s";
+  h.style.animationDuration=(7+Math.random()*7)+"s";
+  h.style.fontSize=(13+Math.random()*20)+"px";
+  h.style.color=i%2?"#ff9ec5":"#c4a7ff";
+  document.body.appendChild(h);
+}
+</script>
+</body>
+</html>
