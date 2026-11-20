@@ -89,7 +89,7 @@ footer{margin-top:25px;color:#a96e87;font-size:13px}
     <h1>Welcome, Yaasoo ❤️</h1>
     <p class="subtitle">A little surprise is waiting for you here...</p>
     <input id="passwordInput" type="password" placeholder="Enter the password" autocomplete="off">
-    <button class="continue" id="loginButton" type="button">Enter ❤️</button>
+    <button class="continue" id="loginButton" type="button" onclick="login()">Enter ❤️</button>
     <p id="error" class="error">Incorrect password. Try again ❤️</p>
   </div>
 </section>
@@ -171,6 +171,4 @@ function startMusic() {
     const playAttempt = song.play();
     if (playAttempt && typeof playAttempt.catch === "function") {
       playAttempt.catch(() => {
-        // The visitor can start the song with the audio controls.
-      });
-  
+        // The visitor can start the song with the audio cont
