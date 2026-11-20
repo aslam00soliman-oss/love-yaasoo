@@ -150,31 +150,27 @@ footer{margin-top:25px;color:#a96e87;font-size:13px}
 const PASSWORD = "yasooo";
 let musicStarted = false;
 
-function login() {
-  const input = document.getElementById("passwordInput");
-  const error = document.getElementById("error");
-  const entered = input.value.trim().toLowerCase();
+function showScreen(id) {
+  const screens = document.querySelectorAll(".screen");
+  screens.forEach(screen => screen.classList.remove("active"));
 
-  if (entered === PASSWORD) {
-    error.style.display = "none";
-    showScreen("dateScreen");
-    startMusic();
-  } else {
-    error.style.display = "block";
-    input.focus();
+  const nextScreen = document.getElementById(id);
+  if (nextScreen) {
+    nextScreen.classList.add("active");
   }
 }
 
 function startMusic() {
   const player = document.getElementById("musicPlayer");
   const song = document.getElementById("siteSong");
-  player.classList.add("visible");
-  if (!musicStarted) {
-    musicStarted = true;
-    song.play().catch(() => {
-      // Autoplay may be blocked by the browser; the audio controls remain available.
-    });
-  }
-}
 
-funct
+  if (player) player.classList.add("visible");
+
+  if (!musicStarted && song) {
+    musicStarted = true;
+    const playAttempt = song.play();
+    if (playAttempt && typeof playAttempt.catch === "function") {
+      playAttempt.catch(() => {
+        // The visitor can start the song with the audio controls.
+      });
+  
