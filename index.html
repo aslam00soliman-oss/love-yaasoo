@@ -1,72 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff7fb">
+<title>For Yaasoo ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:Georgia,'Palatino Linotype','Book Antiqua',serif;color:#87435f;background:linear-gradient(145deg,#fff7fb,#fde8f1,#fff7fb);text-align:center;overflow-x:hidden;padding-bottom:18px}
+.screen{display:none;min-height:100vh;padding:35px 18px;align-items:center;justify-content:center;flex-direction:column}
+.screen.active{display:flex}
+.card{width:100%;max-width:520px;padding:28px 20px;border:1px solid #f2a8c4;border-radius:25px;background:rgba(255,255,255,.88);color:#87435f;box-shadow:0 0 30px rgba(217,79,135,.14)}
+h1,h2{color:#d94f87;font-family:Georgia,'Palatino Linotype','Book Antiqua',serif;letter-spacing:.35px}
+#login h1{font-family:'Segoe Script','Brush Script MT',cursive;font-size:clamp(31px,8vw,39px);font-weight:600;letter-spacing:1.2px;text-shadow:0 2px 10px rgba(217,79,135,.16);line-height:1.45}
+#login .subtitle,#login .continue,#login input{font-family:Georgia,'Palatino Linotype',serif}
+#login .continue{font-size:19px;font-style:italic;letter-spacing:2px;text-transform:uppercase;padding:13px 34px;text-shadow:0 1px 2px rgba(130,35,80,.18);box-shadow:0 5px 14px rgba(217,79,135,.22)}
+.subtitle{color:#9b6078;line-height:1.9}
+.boxes{display:flex;gap:12px;margin:25px 0 12px}
+.info-box{flex:1;padding:20px 8px;border:1px solid #e8a0bd;border-radius:17px;background:rgba(248,187,208,.24)}
+.info-box small{display:block;color:#c85c88;margin-bottom:12px}
+.info-box strong{font-size:19px}
+.special-date-box{width:calc((100% - 12px)/2);margin:0 auto 25px;padding:17px 8px;border:1px solid #e8a0bd;border-radius:17px;background:linear-gradient(145deg,rgba(248,187,208,.32),rgba(255,255,255,.92));box-shadow:0 5px 16px rgba(217,79,135,.09)}
+.special-date-box .couple{display:block;color:#d94f87;font-size:21px;font-weight:bold;margin-bottom:10px;letter-spacing:1px}
+.special-date-box .date-line{display:block;color:#9b4268;font-size:15px;line-height:1.9;font-weight:bold}
+.special-date-box .tiny-heart{color:#e879ad;font-size:12px;margin-top:7px}
+.buttons{display:flex;gap:12px;justify-content:center;margin-top:22px;flex-wrap:wrap}
+button{border:0;padding:13px 25px;border-radius:30px;font-size:16px;cursor:pointer;font-weight:bold;font-family:Georgia,'Palatino Linotype',serif}
+.continue{background:linear-gradient(90deg,#ed78a8,#d94f87);color:white}
+.next-button{font-size:18px;font-style:italic;letter-spacing:2px;text-transform:uppercase;padding:13px 30px;text-shadow:0 1px 2px rgba(130,35,80,.18);box-shadow:0 5px 14px rgba(217,79,135,.22)}
+.back{background:#fff0f6;color:#9b4268}
+.letter{direction:rtl;text-align:right;line-height:2.2;font-size:17px;color:#8d526d;white-space:pre-line;font-family:Tahoma,Arial,sans-serif}
+.memory-photo{display:block;width:100%;max-width:390px;max-height:620px;object-fit:contain;margin:25px auto 8px;border-radius:20px;border:1px solid #e8a0bd;box-shadow:0 10px 30px rgba(180,90,130,.12);background:#fff0f6}
+input{width:100%;padding:14px;margin:15px 0;border-radius:12px;border:1px solid #e8a0bd;background:#fffafd;color:#87435f;text-align:center;font-size:17px;font-family:Georgia,'Palatino Linotype',serif}
+.error{color:#c94e7d;display:none;margin-top:10px}
+footer{margin-top:25px;color:#a96e87;font-size:13px;font-family:Georgia,'Palatino Linotype',serif}
+.music-player{display:none;position:fixed;z-index:1000;bottom:0;left:0;right:0;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,248,252,.97);border-top:1px solid #f2a8c4;box-shadow:0 -5px 25px rgba(180,90,130,.16);overflow:hidden}
+.music-player.visible{display:block}
+.music-title{font-size:14px;color:#c94e7d;margin-bottom:8px;position:relative;z-index:2;font-family:Georgia,'Palatino Linotype',serif}
+.music-player::before{content:"♡  ♥  ♡  ♥  ♡";position:absolute;inset:5px 0 auto;text-align:center;letter-spacing:22px;font-size:15px;color:#f2a8c4;opacity:.55;pointer-events:none;animation:heartDrift 5s ease-in-out infinite}
+.music-player::after{content:"♥";position:absolute;left:8%;top:9px;color:#ec8eb2;font-size:13px;opacity:.65;pointer-events:none;animation:heartFloat 3s ease-in-out infinite}
+@keyframes heartDrift{0%,100%{transform:translateY(0);opacity:.35}50%{transform:translateY(-4px);opacity:.8}}
+@keyframes heartFloat{0%,100%{transform:translateY(5px) scale(.85);opacity:.3}50%{transform:translateY(-5px) scale(1.15);opacity:.85}}
+#siteSong{display:block;width:min(100%,420px);height:42px;margin:0 auto;position:relative;z-index:2}
+@media(max-width:420px){.screen{padding:22px 12px}.card{padding:24px 16px}.letter{font-size:16px}#siteSong{width:100%}}
+</style>
+</head>
+<body>
+
+<section id="login" class="screen active">
+  <div class="card">
+    <h1>Welcome, Yaasoo ❤️</h1>
+    <p class="subtitle">A little surprise is waiting for you here...</p>
+    <input id="passwordInput" type="password" placeholder="Enter the password" autocomplete="off">
+    <button class="continue" id="loginButton" type="button" onclick="login()">Enter ❤️</button>
+    <p id="error" class="error">Incorrect password. Try again ❤️</p>
+  </div>
+</section>
+
+<section id="dateScreen" class="screen">
+  <div class="card">
+    <h1>A Special Day in Our Story ❤️</h1>
+    <p class="subtitle">This is the day a beautiful story began...</p>
+    <div class="boxes">
+      <div class="info-box"><small>📅 DATE</small><strong>16/7/2026</strong></div>
+      <div class="info-box"><small>⏰ TIME</small><strong>6:32:45</strong></div>
+    </div>
+    <div class="special-date-box" aria-label="Special dates">
+      <span class="couple">E 💘 Y</span>
+      <span class="date-line">1/6/2010</span>
+      <span class="date-line">18/9/2010</span>
+      <div class="tiny-heart">♡ ♥ ♡</div>
+    </div>
+    <p class="subtitle">And there is something I want to tell you...</p>
+    <div class="buttons">
+      <button class="back" onclick="showScreen('login')">Back</button>
+      <button class="continue next-button" onclick="showScreen('letterScreen')">Next ❤️</button>
+    </div>
+  </div>
+</section>
+
+<section id="letterScreen" class="screen">
+  <div class="card">
+    <h1>A Letter to Yaasoo 💗</h1>
+    <div class="letter">بصي، أولاً أنا بحبك، وبحبك دي كلمة عادية بتتقال لأي حد، بس مني أنا ليكي بالنسبالي دي مش كلمة؛ لأني بجد عرفت معنى الحب معاكي.
+وإنتي آه مش أول واحدة كلمتها، بس بجد حسيت معاكي بحنان محستوش قبل كده.
+
+وبجد بتمنى نكمل مع بعض طول العمر، لأني بجد اتعودت عليكي أكتر من أي حاجة تانية. بقيتي جزء كبير من يومي، ولازم أطمن عليكي وأعرف كل تفصيلة عنك.
+
+لأنك مش مجرد شخص عادي، لا إنتي أحسن إنسانة أنا عرفتها في حياتي.
+
+وبتمنى إن ربنا يخليكي ليا وميحرمنيش منك أبداً، يا نور عيني.
+
+وبحبك يا أحلى ياسوو في الدنيا ❤️</div>
+
+    <img class="memory-photo" src="photo.jpg" alt="A photo of us together">
+    <div class="buttons">
+      <button class="back" onclick="showScreen('dateScreen')">Back</button>
+    </div>
+    <footer>With all my love ❤️</footer>
+  </div>
+</section>
+
+<div id="musicPlayer" class="music-player" aria-label="Music player">
+  <div class="music-title">🎵 Our Song ❤️</div>
+  <audio id="siteSong" controls preload="auto" playsinline>
+    <source src="song.mp3" type="audio/mpeg">
+    Your browser does not support audio playback.
+  </audio>
+</div>
+
 <script>
 const PASSWORD = "yasooo";
 let musicStarted = false;
 
-// دالة التنقل بين الشاشات
 function showScreen(id) {
   const screens = document.querySelectorAll(".screen");
   screens.forEach(screen => screen.classList.remove("active"));
-
   const nextScreen = document.getElementById(id);
-  if (nextScreen) {
-    nextScreen.classList.add("active");
-  }
+  if (nextScreen) nextScreen.classList.add("active");
 }
 
-// دالة تسجيل الدخول (كانت هذه هي الناقصة)
 function login() {
   const input = document.getElementById("passwordInput");
   const errorMsg = document.getElementById("error");
-
-  // التحقق من كلمة المرور (مع إزالة المسافات الزائدة وتحويلها لأحرف صغيرة لتسهيل الدخول)
   if (input.value.trim().toLowerCase() === PASSWORD) {
     errorMsg.style.display = "none";
-    input.value = ""; // تفريغ الحقل
-    
-    // الانتقال للشاشة التالية
+    input.value = "";
     showScreen("dateScreen");
-    
-    // محاولة تشغيل الموسيقى
     startMusic();
   } else {
-    // إظهار رسالة الخطأ إذا كانت كلمة المرور خاطئة
     errorMsg.style.display = "block";
     input.value = "";
-    input.focus(); // إعادة المؤشر للحقل للكتابة مجدداً
+    input.focus();
   }
 }
 
-// إضافة ميزة الضغط على زر Enter في الكيبورد للدخول
 document.getElementById("passwordInput").addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
-    event.preventDefault(); // منع أي سلوك افتراضي
+    event.preventDefault();
     login();
   }
 });
 
-// دالة تشغيل الموسيقى (مكتملة)
 function startMusic() {
   const player = document.getElementById("musicPlayer");
   const song = document.getElementById("siteSong");
-
   if (player) player.classList.add("visible");
-
   if (!musicStarted && song) {
     musicStarted = true;
     const playAttempt = song.play();
-    
-    // التعامل مع حالة منع المتصفح للتشغيل التلقائي
     if (playAttempt && typeof playAttempt.catch === "function") {
-      playAttempt.catch(() => {
-        console.log("Autoplay blocked by browser. User can play manually.");
-        // المتصفح قد يمنع التشغيل التلقائي للصوت، وسيظهر مشغل الصوت للمستخدم ليضغط Play يدوياً
-      });
+      playAttempt.catch(() => {});
     }
   }
 }
 
-// التركيز التلقائي على حقل كلمة المرور عند فتح الصفحة
 window.onload = function() {
   document.getElementById("passwordInput").focus();
 };
 </script>
+
+</body>
+</html>
