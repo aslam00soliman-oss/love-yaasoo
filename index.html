@@ -89,7 +89,7 @@ footer{margin-top:25px;color:#a96e87;font-size:13px}
     <h1>Welcome, Yaasoo ❤️</h1>
     <p class="subtitle">A little surprise is waiting for you here...</p>
     <input id="passwordInput" type="password" placeholder="Enter the password" autocomplete="off">
-    <button class="continue" onclick="login()">Enter ❤️</button>
+    <button class="continue" id="loginButton" type="button">Enter ❤️</button>
     <p id="error" class="error">Incorrect password. Try again ❤️</p>
   </div>
 </section>
@@ -151,13 +151,17 @@ const PASSWORD = "yasooo";
 let musicStarted = false;
 
 function login() {
-  const entered = document.getElementById("passwordInput").value;
+  const input = document.getElementById("passwordInput");
+  const error = document.getElementById("error");
+  const entered = input.value.trim().toLowerCase();
+
   if (entered === PASSWORD) {
-    document.getElementById("error").style.display = "none";
+    error.style.display = "none";
     showScreen("dateScreen");
     startMusic();
   } else {
-    document.getElementById("error").style.display = "block";
+    error.style.display = "block";
+    input.focus();
   }
 }
 
@@ -168,10 +172,9 @@ function startMusic() {
   if (!musicStarted) {
     musicStarted = true;
     song.play().catch(() => {
-      // Some browsers may block autoplay; the play button will still be available.
+      // Autoplay may be blocked by the browser; the audio controls remain available.
     });
   }
 }
 
-function showScreen(id) {
-  document.querySelectorAll(".screen").forEach(screen 
+funct
