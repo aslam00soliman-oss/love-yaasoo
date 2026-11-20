@@ -21,10 +21,14 @@ body{
 }
 h1,h2{color:#d94f87}
 .subtitle{color:#9b6078;line-height:1.9}
-.boxes{display:flex;gap:12px;margin:25px 0}
+.boxes{display:flex;gap:12px;margin:25px 0 12px}
 .info-box{flex:1;padding:20px 8px;border:1px solid #e8a0bd;border-radius:17px;background:rgba(248,187,208,.24)}
 .info-box small{display:block;color:#c85c88;margin-bottom:12px}
 .info-box strong{font-size:19px}
+.special-date-box{width:calc((100% - 12px)/2);margin:0 auto 25px;padding:17px 8px;border:1px solid #e8a0bd;border-radius:17px;background:linear-gradient(145deg,rgba(248,187,208,.32),rgba(255,255,255,.92));box-shadow:0 5px 16px rgba(217,79,135,.09)}
+.special-date-box .couple{display:block;color:#d94f87;font-size:21px;font-weight:bold;margin-bottom:10px;letter-spacing:1px}
+.special-date-box .date-line{display:block;color:#9b4268;font-size:15px;line-height:1.9;font-weight:bold}
+.special-date-box .tiny-heart{color:#e879ad;font-size:12px;margin-top:7px}
 .buttons{display:flex;gap:12px;justify-content:center;margin-top:22px;flex-wrap:wrap}
 button{border:0;padding:13px 25px;border-radius:30px;font-size:16px;cursor:pointer;font-weight:bold}
 .continue{background:linear-gradient(90deg,#ed78a8,#d94f87);color:white}
@@ -74,6 +78,12 @@ footer{margin-top:25px;color:#a96e87;font-size:13px}
     <div class="boxes">
       <div class="info-box"><small>📅 التاريخ</small><strong>16 / 7 / 2026</strong></div>
       <div class="info-box"><small>⏰ الساعة</small><strong>6:32:45</strong></div>
+    </div>
+    <div class="special-date-box" aria-label="تواريخ مميزة">
+      <span class="couple">E 💘 Y</span>
+      <span class="date-line">1/6/2010</span>
+      <span class="date-line">18/9/2010</span>
+      <div class="tiny-heart">♡ ♥ ♡</div>
     </div>
     <p class="subtitle">وفي كلام نفسي أقولهولك...</p>
     <div class="buttons">
