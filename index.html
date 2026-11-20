@@ -8,7 +8,7 @@
 <style>
 *{box-sizing:border-box}
 body{
-  margin:0;min-height:100vh;font-family:Tahoma,Arial,sans-serif;color:#87435f;
+  margin:0;min-height:100vh;font-family:Georgia,'Palatino Linotype','Book Antiqua',serif;color:#87435f;
   background:linear-gradient(145deg,#fff7fb,#fde8f1,#fff7fb);
   text-align:center;overflow-x:hidden;padding-bottom:18px
 }
@@ -19,7 +19,29 @@ body{
   border-radius:25px;background:rgba(255,255,255,.88);color:#87435f;
   box-shadow:0 0 30px rgba(217,79,135,.14)
 }
-h1,h2{color:#d94f87}
+h1,h2{color:#d94f87;font-family:Georgia,'Palatino Linotype','Book Antiqua',serif;letter-spacing:.35px}
+/* Elegant typography for the English interface */
+#login h1{
+  font-family:'Segoe Script','Brush Script MT','URW Chancery L',cursive;
+  font-size:clamp(31px,8vw,39px);font-weight:600;letter-spacing:1.2px;
+  text-shadow:0 2px 10px rgba(217,79,135,.16);line-height:1.45
+}
+#login .subtitle{
+  font-family:Georgia,'Palatino Linotype',serif;font-size:16px;
+  letter-spacing:.25px;line-height:1.9
+}
+#login .continue{
+  font-family:Georgia,'Palatino Linotype',serif;font-size:19px;
+  font-style:italic;letter-spacing:2px;text-transform:uppercase;
+  padding:13px 34px;text-shadow:0 1px 2px rgba(130,35,80,.18);
+  box-shadow:0 5px 14px rgba(217,79,135,.22)
+}
+#login input{font-family:Georgia,'Palatino Linotype',serif;letter-spacing:.35px}
+.info-box small,.info-box strong,.special-date-box,.music-title,footer,button,input{
+  font-family:Georgia,'Palatino Linotype','Book Antiqua',serif
+}
+.letter{font-family:Tahoma,Arial,sans-serif}
+
 .subtitle{color:#9b6078;line-height:1.9}
 .boxes{display:flex;gap:12px;margin:25px 0 12px}
 .info-box{flex:1;padding:20px 8px;border:1px solid #e8a0bd;border-radius:17px;background:rgba(248,187,208,.24)}
@@ -152,13 +174,4 @@ function startMusic() {
 }
 
 function showScreen(id) {
-  document.querySelectorAll(".screen").forEach(screen => screen.classList.remove("active"));
-  document.getElementById(id).classList.add("active");
-}
-
-document.getElementById("passwordInput").addEventListener("keydown", function(event) {
-  if (event.key === "Enter") login();
-});
-</script>
-</body>
-</html>
+  document.querySelectorAll(".screen").forEach(screen 
