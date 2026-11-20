@@ -46,8 +46,8 @@ footer{margin-top:25px;color:#dba6c0;font-size:13px}
 }
 .music-player.visible{display:block}
 .music-title{font-size:14px;color:#ffd4e5;margin-bottom:8px}
-.music-frame{display:block;width:min(100%,420px);height:200px;margin:0 auto;border:0;border-radius:12px}
-@media(max-width:420px){.screen{padding:22px 12px}.card{padding:24px 16px}.letter{font-size:16px}.music-frame{height:200px}}
+#siteSong{display:block;width:min(100%,420px);height:42px;margin:0 auto}
+@media(max-width:420px){.screen{padding:22px 12px}.card{padding:24px 16px}.letter{font-size:16px}#siteSong{width:100%}}
 </style>
 </head>
 <body>
@@ -101,12 +101,11 @@ footer{margin-top:25px;color:#dba6c0;font-size:13px}
 </section>
 
 <div id="musicPlayer" class="music-player" aria-label="مشغل الأغنية">
-  <div class="music-title">🎵 عمرو دياب — وأنا معاك</div>
-  <iframe id="musicFrame" class="music-frame"
-    title="عمرو دياب - وأنا معاك"
-    allow="autoplay; encrypted-media; picture-in-picture"
-    referrerpolicy="strict-origin-when-cross-origin"
-    src="about:blank"></iframe>
+  <div class="music-title">🎵 أغنيتنا ❤️</div>
+  <audio id="siteSong" controls preload="auto" playsinline>
+    <source src="song.mp3" type="audio/mpeg">
+    متصفحك لا يدعم تشغيل الصوت.
+  </audio>
 </div>
 
 <script>
@@ -126,12 +125,13 @@ function login() {
 
 function startMusic() {
   const player = document.getElementById("musicPlayer");
+  const song = document.getElementById("siteSong");
   player.classList.add("visible");
   if (!musicStarted) {
-    // Official YouTube upload of "Wana Maak" by Amr Diab.
-    document.getElementById("musicFrame").src =
-      "https://www.youtube-nocookie.com/embed/Wj1yyGQmW2c?autoplay=1&controls=1&playsinline=1&rel=0";
     musicStarted = true;
+    song.play().catch(() => {
+      // بعض المتصفحات قد تمنع التشغيل التلقائي؛ زر التشغيل يظل متاحًا.
+    });
   }
 }
 
